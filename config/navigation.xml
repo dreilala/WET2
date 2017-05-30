@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<header>
+<normal>
+<home>Home</home>
+<produkt>Produkte</produkt>
+<warenkorb>Warenkorb</warenkorb>
+</normal>
+<logon>
+<home>Home</home>
+<produkt>Produkte</produkt>
+<konto>Mein Konto</konto>
+<warenkorb>Warenkorb</warenkorb>
+</logon>
+<admin>
+<home>Home</home>
+<produkt>Produkte bearbeiten</produkt>
+<konto>Mein Konto</konto>
+<warenkorb>Warenkorb</warenkorb>
+</admin>
+</header>
