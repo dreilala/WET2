@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_SESSION["id"])) {
     if ($_SESSION["id"] == 1) {
         $myxml = simplexml_load_file("config/navigation.xml");
@@ -8,9 +7,7 @@ if (isset($_SESSION["id"])) {
             echo "<br />";
             echo "<a href='produktadd.php'>$zeile->produkt</a>";
             echo "<br />";
-            echo "<a href='konto.php'>$zeile->konto</a>";
-            echo "<br />";
-            echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
+            echo "<a href='kontochange.php'>$zeile->konto</a>";
             echo "<br />";
         }
     } else {
@@ -22,7 +19,7 @@ if (isset($_SESSION["id"])) {
             echo "<br />";
             echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
             echo "<br />";
-            echo "<a href='warenkorb.php'>$zeile->konto</a>";
+            echo "<a href='konto.php'>$zeile->konto</a>";
         }
     }
 } else {

@@ -1,4 +1,7 @@
-
+<?php
+    session_start();
+    include "dbconn.php";
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +19,6 @@
   </head>
   <body>
     <?php
-
     include("navigation.php")
     ?>
   </body>
