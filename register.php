@@ -17,7 +17,21 @@ and open the template in the editor.
     <body>
         <?php
         include "dbconn.php";
+        $errorOccurred = 0;
+        $vnameError = "";
+        $nnameError = "";
+        $strasseError = "";
+        $plzError = "";
+        $ortError = "";
+        $mailError = "";
+        $usernameError = "";
+        $passwordError = "";
+        $passWdhError = "";
         if (isset($_POST['Inputvname'])) {
+
+
+
+
             $anrede = $_POST['InputAnrede'];
             $vname = $_POST['Inputvname'];
             $nname = $_POST['Inputnname'];
@@ -28,14 +42,44 @@ and open the template in the editor.
             $username = $_POST['Inputbenutzer'];
             $password = $_POST['Inputpass'];
             $passwordwdh = $_POST['Inputpass2'];
-            
-            if(!preg_match('/^([A-ZÖÜÄ][a-züäö]+[ ]?){1,2}$/',$vname)){
-		$userError = "Bitte gültigen Namen eintragen.";
-		$errorOccurred = 1;
-	}
-            
-            
-            
+
+            if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $vname)) {
+                $vnameError = "Bitte gültigen Vornamen eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $nname)) {
+                $nnameError = "Bitte gültigen Nachnamen eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $strasse)) {
+                $strasseError = "Bitte gültige Strasse eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!preg_match("/^[0-9]{4}*$/", $plz)) {
+                $plzError = "Bitte gültige Postleitzahl eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $ort)) {
+                $ortError = "Bitte gültigen Ort eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                $mailError = "Bitte gültige Mailadresse eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+                $usernameError = "Bitte gültigen Usernamen eintragen.";
+                $errorOccurred = 1;
+            }
+            if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/", $password)) {
+                $passwordError = "Bitte gültiges Password eintragen.";
+                $errorOccurred = 1;
+            }
+            if ($passwordwdh != $password) {
+                $passWdhError = "Bitte das gleiche Passwort eintragen.";
+                $errorOccurred = 1;
+            }
+
 
             $password = md5($password);
 
@@ -44,7 +88,7 @@ and open the template in the editor.
             $result = $dbconn->query($sql);
             $menge = $result->num_rows;
 
-            if ($menge == 0) {
+            if ($menge == 0 && $errorOccurred == 0) {
                 $eintrag = "INSERT INTO users (anrede, vorname, nachname, strasse, plz, ort, mail, username, passwd) VALUES ('$anrede', '$vname', '$nname', '$strasse', '$plz', '$ort', '$mail', '$username', '$password')";
 
                 $eintragen = $dbconn->query($eintrag);
@@ -63,6 +107,20 @@ and open the template in the editor.
         }
         ?>
         <form class='col-md-8' action='register.php' method='Post'>
+            <div id="errors">
+                <?php
+                echo
+                $vnameError . "<br />
+                " . $nnameError . "<br />
+		" . $strasseError . "<br />
+		" . $plzError . "<br />
+		" . $ortError . "<br />
+		" . $mailError . "<br />
+		" . $usernameError . "<br />
+		" . $passwordError . "<br />
+		" . $passWdhError . "<br />";
+                ?>
+            </div>
             <div class='form-group'>
                 Anrede
                 <select class="form-control" name='InputAnrede'>
