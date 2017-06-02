@@ -10,6 +10,7 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
             echo "<br />";
             echo "<a href='kontochange.php'>$zeile->konto</a>";
             echo "<br />";
+            echo "<a href='voucher.php'>$zeile->gutschein</a>";
             echo "<br />";
             echo "<a href='logout.php'>$zeile->logout</a>";
         }
@@ -20,9 +21,9 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
             echo "<br />";
             echo "<a href='produkt.php'>$zeile->produkt</a>";
             echo "<br />";
-            echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
-            echo "<br />";
             echo "<a href='konto.php'>$zeile->konto</a>";
+            echo "<br />";
+            echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
             echo "<br />";
             echo "<a href='logout.php'>$zeile->logout</a>";
         }
