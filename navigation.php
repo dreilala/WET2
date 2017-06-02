@@ -10,6 +10,8 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
             echo "<br />";
             echo "<a href='kontochange.php'>$zeile->konto</a>";
             echo "<br />";
+            echo "<br />";
+            echo "<a href='logout.php'>$zeile->logout</a>";
         }
     } else {
         $myxml = simplexml_load_file("config/navigation.xml");

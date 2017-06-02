@@ -6,14 +6,14 @@ session_start();
 include "dbconn.php";
 
 if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['check'] == true) {
-    $email = $_POST["InputUser"];
+    $user = $_POST["InputUser"];
     $password = md5($_POST["InputPassword"]);
 
-    $ergebnis = $dbconn->query("SELECT passwd FROM users WHERE mail LIKE '" . $email . "' LIMIT 1");
+    $ergebnis = $dbconn->query("SELECT passwd FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
     $row = $ergebnis->fetch_object();
     if ($row->passwd == $password) {
-
-        $erg = $dbconn->query("SELECT id FROM users WHERE mail ='" . $email . "' LIMIT 1");
+        
+                $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
         $getid = $erg->fetch_object();
         $id = $getid->id;
         setcookie("userid", $id, time() + 9999);
@@ -23,13 +23,13 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
     }
 } else {
     if (isset($_POST['InputUser']) && isset($_POST['InputPassword'])) {
-        $email = $_POST["InputUser"];
+        $user = $_POST["InputUser"];
         $password = md5($_POST["InputPassword"]);
 
-        $ergebnis = $dbconn->query("SELECT passwd FROM users WHERE mail LIKE '" . $email . "' LIMIT 1");
+        $ergebnis = $dbconn->query("SELECT passwd FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
         $row = $ergebnis->fetch_object();
         if ($row->passwd == $password) {
-            $erg = $dbconn->query("SELECT id FROM users WHERE mail ='" . $email . "' LIMIT 1");
+            $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
             $getid = $erg->fetch_object();
             $id = $getid->id;
             $_SESSION["userid"] = $id;
