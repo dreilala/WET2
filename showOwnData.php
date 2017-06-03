@@ -12,6 +12,8 @@ include "dbconn.php";
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
         <title></title>
     </head>
     <body>
@@ -28,9 +30,9 @@ include "dbconn.php";
             $username = $row->username;
 
             $sql2 = "select * from paymentinfo where username = '$username'";
-            $result2 = $dbconn->query($sql);
+            $result2 = $dbconn->query($sql2);
 
-
+            //echo "<div class='row'>";
             echo "<table>";
             echo "<tr>";
             echo "<td>Vorname</td>";
@@ -66,12 +68,15 @@ include "dbconn.php";
                 echo "<tr>";
                 echo "<td>Zahlungsart</td>";
                 echo "<td>$row2->paymentmethod</td>";
+                echo "</tr>";
+                echo "<tr>";
                 echo "<td>Nummer</td>";
                 echo "<td>$row2->number</td>";
                 echo "</tr>";
             }
-            
-            
+            echo "</table>";
+            echo "<a href='changeOwnData.php' class='btn btn-default'>Bearbeiten</a>";
+            //echo "</div>";
         }
         $dbconn->close();
         ?>
