@@ -23,7 +23,7 @@ public function displayAll(){
 
     echo "<div class='col-sm-4'>";
     echo "  <div class='panel panel-primary'>";
-    echo "<div class='panel-body'><img src='https://placehold.it/150x80?text=IMAGE' class='img-responsive' style='width:100%' alt='Image'></div>";
+    echo "<div class='panel-body'><img src='images/".$zeile->pathtopicture."' class='img-responsive' style='width:100%' alt='Image'></div>";
     echo "<div class='panel-footer'>$zeile->price</div>";
     echo "</div>";
     echo "  </div>";
