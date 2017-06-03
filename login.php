@@ -4,6 +4,7 @@ session_start();
 ?>
 <?php
 include "dbconn.php";
+include("navigation.php");
 
 if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['check'] == true) {
     $user = $_POST["InputUser"];

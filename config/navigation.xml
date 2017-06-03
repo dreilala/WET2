@@ -17,5 +17,6 @@
 <produkt>Produkte bearbeiten</produkt>
 <kunden>Kunden bearbeiten</kunden>
 <gutschein>Gutscheine verwalten</gutschein>
+<logout>Logout</logout>
 </admin>
 </header>
