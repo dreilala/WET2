@@ -109,7 +109,7 @@ and open the template in the editor.
         <form class='col-md-8' action='register.php' method='Post'>
             <div id="errors" >
                 <?php
-                echo 
+                /*echo 
                 $vnameError . "<br />
                 " . $nnameError . "<br />
 		" . $strasseError . "<br />
@@ -118,7 +118,7 @@ and open the template in the editor.
 		" . $mailError . "<br />
 		" . $usernameError . "<br />
 		" . $passwordError . "<br />
-		" . $passWdhError . "<br />";
+		" . $passWdhError . "<br />";*/
                 ?>
             </div>
             <div class='form-group'>
