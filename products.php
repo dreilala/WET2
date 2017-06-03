@@ -18,6 +18,46 @@
   include("classes\Products.Class.php");
   ?>
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-default ">
+</nav>
+<nav class="navbar  navbar-default navbar-fixed-top ">
+     <div class="container-fluid">
+     </div>
+</nav>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
 <?php         // creating box
 
 
@@ -25,51 +65,7 @@
 $products = new products($dbconn);
 $products->displayAll();
 $products->addProduct("4","4","4.png","4");
-echo "<div class='col-md-4 m-b-20px'>";
 
-// product id for javascript access
-echo "<div class='product-id display-none'>ID</div>";
-
-echo "<a href='product.php?id=Id' class='product-link'>";
-// select and show first product image
-//                $product_image->product_id=$id;
-/*            $stmt_product_image=$product_image->readFirst();
-
-while ($row_product_image = $stmt_product_image->fetch(PDO::FETCH_ASSOC)){
-echo "<div class='m-b-10px'>";
-echo "<img src='uploads/images/{$row_product_image['name']}' class='w-100-pct' />";
-echo "</div>";
-} */
-
-// product name
-echo "<div class='product-name m-b-10px'>NAME</div>";
-echo "</a>";
-
-// product price and category name
-echo "<div class='m-b-10px'>";
-echo "&#36;" . number_format(122, 2, '.', ',');
-echo "</div>";
-
-// add to cart button
-echo "<div class='m-b-10px'>";
-// cart item settings
-//                $cart_item->user_id=1; // we default to a user with ID "1" for now
-//                $cart_item->product_id=1;
-
-// if product was already added in the cart
-//                    if($cart_item->exists()){
-//                        echo "<a href='cart.php' class='btn btn-success w-100-pct'>";
-//                            echo "Update Cart";
-//                        echo "</a>";
-//                    }else{
-echo "<a href='add_to_cart.php?id=1&page={1}' class='btn btn-primary w-100-pct'>Add to Cart</a>";
-//                    }
-echo "</div>";
-
-
-
-echo "</div>";
-//    }
 ?>
 </body>
 </html>
