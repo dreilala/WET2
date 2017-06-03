@@ -33,7 +33,7 @@ include("navigation.php");
         $numberError = "";
         $userError = "";
 
-        if (isset($_POST['Inputvname'])) {
+        if (!empty($_POST)) {
             $anrede = $_POST['InputAnrede'];
             $vname = $_POST['Inputvname'];
             $nname = $_POST['Inputnname'];
@@ -87,10 +87,6 @@ include("navigation.php");
                 $numberError = "Bitte gültige Kartennummer eingeben.";
                 $errorOccurred = 2;
             }
-            /* if ($paymentmethod == "Gutschein" && !preg_match("/[0-9]{13,16}/", $password)) {
-              $numberError = "Bitte gültige Kartennummer eingeben.";
-              $errorOccurred = 1;
-              } */
 
 
             $password = md5($password);
@@ -191,7 +187,6 @@ include("navigation.php");
                 Zahlungsinformation
                 <select class="form-control" name='Inputpaymentmethod' required="true">
                     <option></option>
-                    <option>Gutschein</option>
                     <option>Kreditkarte</option>
                     <option>Bankomatkarte</option>
                 </select>

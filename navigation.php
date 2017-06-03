@@ -23,7 +23,7 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
         foreach ($myxml->logon as $zeile) {
             echo "<a href='index.php'>$zeile->home</a>";
             echo "<br />";
-            echo "<a href='produkt.php'>$zeile->produkt</a>";
+            echo "<a href='products.php'>$zeile->produkt</a>";
             echo "<br />";
             echo "<a href='showOwnData.php'>$zeile->konto</a>";
             echo "<br />";
@@ -39,7 +39,7 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
     foreach ($myxml->normal as $zeile) {
         echo "<a href='index.php'>$zeile->home</a>";
         echo "<br />";
-        echo "<a href='produkt.php'>$zeile->produkt</a>";
+        echo "<a href='products.php'>$zeile->produkt</a>";
         echo "<br />";
         echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
         echo "<br />";

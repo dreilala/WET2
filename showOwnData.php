@@ -76,6 +76,7 @@ include "dbconn.php";
             }
             echo "</table>";
             echo "<a href='changeOwnData.php' class='btn btn-default'>Bearbeiten</a>";
+            echo "<a href='addPaymentData.php' class='btn btn-default'>Zahlungsdaten hinzufügen</a>";
             //echo "</div>";
         }
         $dbconn->close();

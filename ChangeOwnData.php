@@ -181,7 +181,7 @@
                     </div>
                     <div class='form-group'>
                         Benutzername
-                        <input type='text' class='form-control' name='Inputbenutzer' value="<?php echo!empty($username) ? $username : ''; ?>" placeholder='Benutzer' required="true" pattern="[a-zA-Z0-9]*$">
+                        <input type='text' class='form-control' name='Inputbenutzer' value="<?php echo!empty($username) ? $username : ''; ?>" placeholder='Benutzer' required="true" pattern="[a-zA-Z0-9]*$" readonly="true">
                     </div>
                     <div class='form-group'>
                         Passwort
