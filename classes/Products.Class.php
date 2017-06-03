@@ -38,7 +38,7 @@ class products {
               <div class="col-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
 <?php
-                  echo "<img src='images/".$zeile->pathtopicture." alt=''>"
+                  echo "<img src='images/".$zeile->pathtopicture."' alt='' onerror=\"this.src='images/default.jpg'\">"
 ?>
 
                   <div class="caption">
