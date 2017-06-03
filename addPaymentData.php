@@ -34,13 +34,13 @@ include "dbconn.php";
             $eintragenPayment = $dbconn->query($eintragPayment);
 
             if ($eintragenPayment == true) {
-                //header("Location: showOwnData.php");
-                //exit;
+                header("Location: showOwnData.php");
+                exit;
             } else {
-                //$userError = "Fehler beim Speichern der Daten in der DB. Bitte später nochmal versuchen";
-                //$errorOccurred = 2;
-                //header("Location: addPaymentData.php");
-                //exit;
+                $userError = "Fehler beim Speichern der Daten in der DB. Bitte später nochmal versuchen";
+                $errorOccurred = 2;
+                header("Location: addPaymentData.php");
+                exit;
             }
         }
         ?>
