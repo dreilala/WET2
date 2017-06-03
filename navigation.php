@@ -1,6 +1,8 @@
 <?php
 
 if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
+    
+   
     if ($_SESSION["userid"] == 1 || $_COOKIE["userid"] == 1) {
         $myxml = simplexml_load_file("config/navigation.xml");
         foreach ($myxml->admin as $zeile) {
@@ -13,6 +15,8 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
             echo "<a href='voucher.php'>$zeile->gutschein</a>";
             echo "<br />";
             echo "<a href='logout.php'>$zeile->logout</a>";
+            echo "<h1>Willkommen!</h1><br>";
+            echo "Sie sind eingeloggt ... ";
         }
     } else {
         $myxml = simplexml_load_file("config/navigation.xml");
@@ -27,6 +31,8 @@ if (isset($_SESSION["userid"]) || isset($_COOKIE["userid"])) {
             echo "<br />";
             echo "<a href='logout.php'>$zeile->logout</a>";
         }
+        echo "<h1>Willkommen!</h1><br>";
+        echo "Sie sind eingeloggt ... ";
     }
 } else {
     $myxml = simplexml_load_file("config/navigation.xml");

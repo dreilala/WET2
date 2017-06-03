@@ -55,7 +55,7 @@ and open the template in the editor.
                 $strasseError = "Bitte gültige Strasse eintragen.";
                 $errorOccurred = 1;
             }
-            if (!preg_match("/^[0-9]{4}*$/", $plz)) {
+            if (!preg_match("/[0-9]{4}/", $plz)) {
                 $plzError = "Bitte gültige Postleitzahl eintragen.";
                 $errorOccurred = 1;
             }
@@ -107,9 +107,9 @@ and open the template in the editor.
         }
         ?>
         <form class='col-md-8' action='register.php' method='Post'>
-            <div id="errors">
+            <div id="errors" >
                 <?php
-                echo
+                echo 
                 $vnameError . "<br />
                 " . $nnameError . "<br />
 		" . $strasseError . "<br />

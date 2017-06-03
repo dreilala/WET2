@@ -16,7 +16,7 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
                 $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
         $getid = $erg->fetch_object();
         $id = $getid->id;
-        setcookie("userid", $id, time() + 9999);
+        setcookie("userid", $id, time() + 99999);
         //print_r($_SESSION["userid"]);
         header("Location: index.php");
         exit;
