@@ -3,6 +3,6 @@
 $host = "localhost";
 $user = "root";
 $pw = "";
-$db = "mysql";
-        
+$db = "WET2";
+
 $dbconn = new mysqli($host, $user, $pw, $db);
