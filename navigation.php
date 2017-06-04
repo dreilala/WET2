@@ -92,3 +92,10 @@ if (isset($_COOKIE["userid"])) {
 </nav>
 <nav class="navbar navbar-default" role="navigation">
 </nav>
+<?php 
+if (isset($_SESSION["userid"])) {
+echo "Sie sind eingeloggt... "; 
+    
+    
+}
+?>
