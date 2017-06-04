@@ -7,8 +7,16 @@ class products {
   public function __construct($db){
     $this->conn = $db;
   }
+  public function addProduct($name, $description, $pathToPicture, $price){
 
-
+    $stmt = $this->conn->prepare("INSERT INTO `products` (`Name`, `Description`, `pathtopicture`, `price`) VALUES (?,?,?,?)");
+    $stmt->bind_param("sssd", $name, $description, $pathToPicture, $price);
+    $stmt->execute();
+    $stmt->close();
+  }
+  public function addImage($name) {
+    
+  }
   public function displayAll(){
 
 
@@ -83,11 +91,5 @@ class products {
 
   }
 
-  public function addProduct($name, $description, $pathToPicture, $price){
 
-    $stmt = $this->conn->prepare("INSERT INTO `products` (`Name`, `Description`, `pathtopicture`, `price`) VALUES (?,?,?,?)");
-    $stmt->bind_param("sssd", $name, $description, $pathToPicture, $price);
-    $stmt->execute();
-    $stmt->close();
-  }
 }
