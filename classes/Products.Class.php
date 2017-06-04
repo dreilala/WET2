@@ -15,7 +15,7 @@ class products {
     $stmt->close();
   }
   public function addImage($name) {
-    
+
   }
   public function displayAll(){
 
@@ -65,7 +65,10 @@ class products {
                   </div>
                   <div class='m-b-10px'>
 
-                  <a href='add_to_cart.php?id=1&page={1}' class='btn btn-primary w-100-pct'>Add to Cart</a>
+                  <input type="button" id="add_
+                  <?php echo $zeile->Name; ?>
+                  " value="Add to cart" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')"/>
+                  <input type="button" id="added_<?php echo $zeile->Name; ?>" value="Added" class="btnAdded"  />
 
                   </div>
                 </div>
