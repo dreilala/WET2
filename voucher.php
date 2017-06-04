@@ -18,9 +18,6 @@ include "navigation.php";
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
         <div class="container">
             <h1>Liste aller Gutscheine</h1>
             <p>
