@@ -5,8 +5,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-//include "config/settings.php";
-include("dbconn.php");
+session_start();
+include "config/settings.php";
 include("classes\User.Class.php");
 ?>
 <html>

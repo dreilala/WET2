@@ -2,8 +2,7 @@
 <html lang="en">
     <?php
     session_start();
-    include "navigation.php";
-    include "dbconn.php";
+    include "config";
     include "classes\User.Class.php";
 
     $id = $_SESSION['userid'];
