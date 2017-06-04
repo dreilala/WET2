@@ -34,7 +34,7 @@ include "classes/User.Class.php";
                 $result2 = $dbconn->query($sql2);
 
                 //echo "<div class='row'>";
-                echo "<table>";
+                echo "<table class='table table-bordered'>";
                 echo "<tr>";
                 echo "<td>Vorname</td>";
                 echo "<td>$row->vorname</td>";
@@ -76,9 +76,9 @@ include "classes/User.Class.php";
                     echo "</tr>";
                 }
                 echo "</table>";
-                echo "<a href='changeOwnData.php' class='btn btn-default'>Bearbeiten</a>";
-                echo "<a href='changePassword.php' class='btn btn-danger'>Passwort ändern</a>";
-                echo "<a href='addPaymentData.php' class='btn btn-default'>Zahlungsdaten hinzufügen</a>";
+                echo "<p><a href='changeOwnData.php' class='btn btn-default'>Bearbeiten</a></p>";
+                echo "<p><a href='changePassword.php' class='btn btn-danger'>Passwort ändern</a></p>";
+                echo "<p><a href='addPaymentData.php' class='btn btn-success'>Zahlungsdaten hinzufügen</a></p>";
                 //echo "</div>";
             }
             $dbconn->close();
