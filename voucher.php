@@ -13,6 +13,8 @@ include "navigation.php";
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
         <title></title>
     </head>
     <body>
@@ -20,38 +22,34 @@ include "navigation.php";
         // put your code here
         ?>
         <div class="container">
-            <div class="row">
-                <h1>Liste aller Gutscheine</h1>
-            </div>
-            <div class="row">
-                <p>
-                    <a href="addVoucher.php" class="btn btn-success">Gutschein hinzufügen</a>
-                </p>
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Gültigkeit</th>
-                            <th>Wert</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $sql = "select * from voucher";
-                        $result = $dbconn->query($sql);
-                        while ($row = $result->fetch_object()) {
-                            echo "<tr>";
-                            echo "<td>$row->code</td>";
-                            echo "<td>$row->valid</td>";
-                            echo "<td>$row->value</td>";
-                            echo "<td>$row->state</td>";
-                            echo "</td>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
+            <h1>Liste aller Gutscheine</h1>
+            <p>
+                <a href="addVoucher.php" class="btn btn-success">Gutschein hinzufügen</a>
+            </p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Gültigkeit</th>
+                        <th>Wert</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $sql = "select * from voucher";
+                    $result = $dbconn->query($sql);
+                    while ($row = $result->fetch_object()) {
+                        echo "<tr>";
+                        echo "<td>$row->code</td>";
+                        echo "<td>$row->valid</td>";
+                        echo "<td>$row->value €</td>";
+                        echo "<td>$row->state</td>";
+                        echo "</td>";
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
 
     </body>

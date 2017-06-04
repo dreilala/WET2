@@ -11,12 +11,12 @@
         $passwordold = $_POST['Inputpassold'];
         $passwordnew = $_POST['Inputpassnew'];
         $passwordnew2 = $_POST['Inputpassnew2'];
-        
+
         $User = new User($dbconn);
-        
+
         $User->changePassword($id, $passwordold, $passwordnew, $passwordnew2);
     } else {
-        
+
         $sql = "select * from users where id = '$id'";
         $result = $dbconn->query($sql);
         $row = $result->fetch_object();
@@ -41,33 +41,27 @@
 
     <body>
         <div class="container">
+        <h3>Update Password</h3>
 
-            <div class="span10 offset1">
-                <div class="row">
-                    <h3>Update Password</h3>
-                </div>
+        <form class="col-md-8" action="changePassword.php" method="POST">
 
-                <form class="form-horizontal" action="changePassword.php" method="POST">
-                    
-                    <div class='form-group'>
-                        Altes Passwort
-                        <input type='password' class='form-control' name='Inputpassold' placeholder='Actual Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
-                    </div>
-                    <div class='form-group'>
-                        Neues Passwort
-                        <input type='password' class='form-control' name='Inputpassnew' placeholder='Neues Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
-                    </div>
-                    <div class='form-group'>
-                        Neues Passwort bestätigen
-                        <input type='password' class='form-control' name='Inputpassnew2' placeholder='Neues Passwort bestätigen' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-success">Update</button>
-                        <a class="btn" href="showOwnData.php">Back</a>
-                    </div>
-                </form>
+            <div class='form-group'>
+                Altes Passwort
+                <input type='password' class='form-control' name='Inputpassold' placeholder='Actual Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
             </div>
-
-        </div> <!-- /container -->
+            <div class='form-group'>
+                Neues Passwort
+                <input type='password' class='form-control' name='Inputpassnew' placeholder='Neues Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+            </div>
+            <div class='form-group'>
+                Neues Passwort bestätigen
+                <input type='password' class='form-control' name='Inputpassnew2' placeholder='Neues Passwort bestätigen' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-success">Update</button>
+                <a class="btn" href="showOwnData.php">Back</a>
+            </div>
+        </form>
+        </div>
     </body>
 </html>

@@ -34,7 +34,10 @@ if (isset($_COOKIE["userid"])) {
                             echo "<a href='customerinfo.php'>$zeile->kunden</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
+                            echo "<a href='addProduct.php'>$zeile->produkt</a>";
+                            echo "</li>";
+                            echo "<li>";
+                            echo "<a href='voucher.php'>$zeile->gutschein</a>";
                             echo "</li>";
                             echo "<li>";
                             echo "<a href='logout.php'>$zeile->logout</a>";
@@ -73,10 +76,10 @@ if (isset($_COOKIE["userid"])) {
                         echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='register.php'>Registrierung</a>";
+                        echo "<a href='register.php'>$zeile->register</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='login.php'>Login</a>";
+                        echo "<a href='login.php'>$zeile->login</a>";
                         echo "</li>";
                     }
                 }
