@@ -4,19 +4,11 @@
     session_start();
     include "navigation.php";
     include "dbconn.php";
+    include "classes\User.Class.php";
 
     $id = $_SESSION['userid'];
 
     if (!empty($_POST)) {
-        // keep track validation errors
-        $nameError = null;
-        $emailError = null;
-        $mobileError = null;
-
-        // keep track post values
-        /* $name = $_POST['name'];
-          $email = $_POST['email'];
-          $mobile = $_POST['mobile']; */
 
         $anrede = $_POST['InputAnrede'];
         $vname = $_POST['Inputvname'];
@@ -27,94 +19,10 @@
         $mail = $_POST['Inputmail'];
         $username = $_POST['Inputbenutzer'];
         $password = $_POST['Inputpass'];
-        $passwordwdh = $_POST['Inputpass2'];
-
-        // validate input
-        /* $valid = true;
-          if (empty($name)) {
-          $nameError = 'Please enter Name';
-          $valid = false;
-          }
-
-          if (empty($email)) {
-          $emailError = 'Please enter Email Address';
-          $valid = false;
-          } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $emailError = 'Please enter a valid Email Address';
-          $valid = false;
-          }
-
-          if (empty($mobile)) {
-          $mobileError = 'Please enter Mobile Number';
-          $valid = false;
-          } */
-
-        if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $vname)) {
-            $vnameError = "Bitte gültigen Vornamen eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $nname)) {
-            $nnameError = "Bitte gültigen Nachnamen eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $strasse)) {
-            $strasseError = "Bitte gültige Strasse eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!preg_match("/[0-9]{4}/", $plz)) {
-            $plzError = "Bitte gültige Postleitzahl eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!preg_match("/^[a-züäöA-ZÖÜÄ -]*$/", $ort)) {
-            $ortError = "Bitte gültigen Ort eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $mailError = "Bitte gültige Mailadresse eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-            $usernameError = "Bitte gültigen Usernamen eintragen.";
-            $errorOccurred = 2;
-        }
-        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/", $password)) {
-            $passwordError = "Bitte gültiges Password eintragen.";
-            $errorOccurred = 2;
-        }
-        if ($passwordwdh != $password) {
-            $passWdhError = "Bitte das gleiche Passwort eintragen.";
-            $errorOccurred = 2;
-        }
         
-        $password = md5($password);
-
-        // update data
-        /* if ($valid) {
-          $pdo = Database::connect();
-          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "UPDATE customers  set name = ?, email = ?, mobile =? WHERE id = ?";
-          $q = $pdo->prepare($sql);
-          $q->execute(array($name, $email, $mobile, $id));
-          Database::disconnect();
-          header("Location: index.php");
-          } */
-
-        $eintragUser = "update users set anrede = '$anrede', vorname = '$vname', nachname = '$nname', strasse = '$strasse', plz = '$plz', ort = '$ort', mail = '$mail', username = '$username', passwd = '$password' where id='$id'";
-        //$eintragPayment = "update paymentinfo set id = '$id', username = '$username', paymentmethod = '$paymentmethod', number = '$number'";
-
-        $eintragenUser = $dbconn->query($eintragUser);
-        //$eintragenPayment = $dbconn->query($eintragPayment);
-        //print_r($eintragenPayment);
-        //print_r($eintragenUser);
-        if ($eintragenUser == true) {
-            header("Location: showOwnData.php");
-            exit;
-        } else {
-            $userError = "Fehler beim speichern der Daten in der DB. Bitte später nochmal versuchen";
-            $errorOccurred = 2;
-            header("Location: ChangeOwnData.php");
-            exit;
-        }
+        $User = new User($dbconn);
+        
+        $User->changeUser($id, $anrede, $vname, $nname, $strasse, $plz, $ort, $mail, $username, $password);
     } else {
         
         $sql = "select * from users where id = '$id'";
@@ -181,15 +89,11 @@
                     </div>
                     <div class='form-group'>
                         Benutzername
-                        <input type='text' class='form-control' name='Inputbenutzer' value="<?php echo!empty($username) ? $username : ''; ?>" placeholder='Benutzer' required="true" pattern="[a-zA-Z0-9]*$">
+                        <input type='text' class='form-control' name='Inputbenutzer' value="<?php echo!empty($username) ? $username : ''; ?>" placeholder='Benutzer' required="true" pattern="[a-zA-Z0-9]*$" readonly="true">
                     </div>
                     <div class='form-group'>
                         Passwort
-                        <input type='password' class='form-control' name='Inputpass' placeholder='new Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
-                    </div>
-                    <div class='form-group'>
-                        Passwort wiederholen
-                        <input type='password' class='form-control' name='Inputpass2' placeholder='new Passwort' required="true">
+                        <input type='password' class='form-control' name='Inputpass' placeholder='Actual Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-success">Update</button>

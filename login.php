@@ -1,10 +1,8 @@
 <?php
 session_start();
-//include "dbconn.php";
+include "config/settings.php";
 ?>
 <?php
-include "dbconn.php";
-include("navigation.php");
 
 if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['check'] == true) {
     $user = $_POST["InputUser"];
@@ -14,7 +12,7 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
     $row = $ergebnis->fetch_object();
     if ($row->passwd == $password) {
         
-                $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
+        $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
         $getid = $erg->fetch_object();
         $id = $getid->id;
         setcookie("userid", $id, time() + 99999);
@@ -53,7 +51,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
 

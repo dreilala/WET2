@@ -8,6 +8,9 @@
             <file>file:/C:/xampp/htdocs/WET2/config/navigation.xml</file>
             <file>file:/C:/xampp/htdocs/WET2/dbconn.php</file>
             <file>file:/C:/xampp/htdocs/WET2/navigation.php</file>
+            <file>file:/C:/xampp/htdocs/WET2/voucher.php</file>
+            <file>file:/C:/xampp/htdocs/WET2/Customerinfo.php</file>
+            <file>file:/C:/xampp/htdocs/WET2/addVoucher.php</file>
             <file>file:/C:/xampp/htdocs/WET2/register.php</file>
         </group>
     </open-files>

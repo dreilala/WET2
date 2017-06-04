@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "dbconn.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +18,7 @@ include "dbconn.php";
   </head>
   <body>
     <?php
-    include("navigation.php")
+    include "config/settings.php";
     ?>
   </body>
 </html>
