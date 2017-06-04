@@ -2,8 +2,8 @@
 <html lang="en">
     <?php
     session_start();
-    include "config";
-    include "classes\User.Class.php";
+    include "config/settings.php";
+    include "classes/User.Class.php";
 
     $id = $_SESSION['userid'];
 
