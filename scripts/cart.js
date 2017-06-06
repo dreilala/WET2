@@ -21,6 +21,7 @@ url: "add_to_cart.php",
 data:queryString,
 type: "POST",
 success:function(data){
+	alert(data);
 	document.getElementById("warenkorb").innerHTML = "Warenkorb: " + data;
 }
 });

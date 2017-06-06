@@ -84,7 +84,6 @@ if (isset($_COOKIE["userid"])) {
                     }
                 }
                 ?>
-<<<<<<< HEAD
                 <li><a id="warenkorb" href="#">Korb: 0</a></li>
             </ul>
         </div>
@@ -92,20 +91,18 @@ if (isset($_COOKIE["userid"])) {
     </div>
     <!-- /.container -->
 </nav>
-=======
-            </ul>              
-        </div>              
-        <!-- /.navbar-collapse -->          
-    </div>          
-    <!-- /.container -->      
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
 </nav>
 <nav class="navbar navbar-default" role="navigation">
 </nav>
-<?php 
+<?php
 if (isset($_SESSION["userid"])) {
-echo "Sie sind eingeloggt... "; 
-    
-    
+echo "Sie sind eingeloggt... ";
+
+
 }
 ?>
->>>>>>> b6b7f21e51c9202f2a0055ba1846f9da6d5ad67f
