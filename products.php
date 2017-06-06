@@ -24,8 +24,8 @@
   include("classes\Products.Class.php");
   include("classes\Cart.Class.php");
   include("config\settings.php");
-  if(!isset($cart)){
-    $cart = new cart($dbconn);
+  if(!isset($_SESSION["cart"])){
+    $_SESSION["cart"] = new cart($dbconn);
   }
 
   ?>
