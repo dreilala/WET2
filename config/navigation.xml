@@ -4,17 +4,21 @@
 <home>Home</home>
 <produkt>Produkte</produkt>
 <warenkorb>Warenkorb</warenkorb>
+<register>Registrierung</register>
+<login>Login</login>
 </normal>
 <logon>
 <home>Home</home>
 <produkt>Produkte</produkt>
 <konto>Mein Konto</konto>
 <warenkorb>Warenkorb</warenkorb>
+<logout>Logout</logout>
 </logon>
 <admin>
 <home>Home</home>
 <produkt>Produkte bearbeiten</produkt>
-<konto>Mein Konto</konto>
-<warenkorb>Warenkorb</warenkorb>
+<kunden>Kunden bearbeiten</kunden>
+<gutschein>Gutscheine verwalten</gutschein>
+<logout>Logout</logout>
 </admin>
 </header>
