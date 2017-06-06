@@ -22,7 +22,7 @@ data:queryString,
 type: "POST",
 success:function(data){
 	alert(data);
-	document.getElementById("warenkorb").innerHTML = "Warenkorb: " + data;
+	document.getElementById("warenkorb").innerHTML = "Warenkorb: " +data["sum"];
 }
 });
 }

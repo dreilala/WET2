@@ -4,8 +4,9 @@
   if(!isset($cart)){
     $cart = new cart($dbconn);
   }
+  echo $_POST["code"];
   $cart->setCart($_POST["code"],1);
 
-  $cart->getProducts();
-
+  $products = $cart->getProducts();
+  var_dump($products);
  ?>

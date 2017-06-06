@@ -3,32 +3,42 @@
 class cart{
 
   private $conn;
-  private $products = array("index"=>"0");
+  private $products = array("sum"=>"0");
 
   public function __construct($db){
     $this->conn = $db;
   }
 
-  public function setCart($product,$menge){
-
-    $products[$product]=$menge;
-
-  }
-
-  public function count(){
+  public function setSum(){
 
     $count = 0;
-    foreach ($products as $key => $value){
+    foreach ($this->products as $key => $value){
 
-      $count = $count + $value;
+      $sum = 0;
+      if($key<>"sum"){
+
+        $count = $count + $value;
+      }
 
     }
-    return $count;
+    $this->products["sum"]=$count;
 
   }
 
+  public function setCart($product,$menge){
+    $this->products[$product]=$menge;
+    $this->setSum();
+
+  }
+
+
+  public function countProduct($name){
+
+    return $this->products[$name];
+
+  }
   public function getProducts(){
-    return $products;
+    return $this->products;
   }
 
 }

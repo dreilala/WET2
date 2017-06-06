@@ -19,10 +19,12 @@ class products {
   }
   public function displayAll(){
 
-
-
     $query = "SELECT * FROM products";
     $ergebnis = $this->conn->query($query);
+    if(!isset($cart)){
+      $cart = new cart($this->conn);
+    }
+    $products = $cart->getProducts();
 
 ?>
      <div class="container">
@@ -67,8 +69,8 @@ class products {
 
                   <input type="button" id="add_
                   <?php echo $zeile->Name; ?>
-                  " value="Add to cart" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')"/>
-                  <input type="button" id="added_<?php echo $zeile->Name; ?>" value="Added" class="btnAdded"  />
+                  " value="Add to cart" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
+                  <input type="button" id="added_<?php echo $zeile->Name; ?>" value="update" class="btnAdded" />
 
                   </div>
                 </div>
