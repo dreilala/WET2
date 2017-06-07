@@ -25,14 +25,24 @@ success:function(data){
 	var obj = JSON.parse(data);
 	alert(obj["sum"]);
 
-	document.getElementById("warenkorb").innerHTML = "Warenkorb: " +data["sum"];
+	document.getElementById("warenkorb").innerHTML = "Warenkorb: " +obj["sum"];
 
-	for (var prop in data) {
-
-  if (data.hasOwnProperty(prop)) {
+	for (var prop in obj) {
+  		if (obj.hasOwnProperty(prop)) {
   // or if (Object.prototype.hasOwnProperty.call(obj,prop)) for safety...
 
-  }}
+				if (prop!="sum"){
+
+						alert("amount_"+prop);
+						$("amount_"+prop).val(obj[prop]);
+						$("amount_"+prop).attr("style","display:inline;");
+				}
+
+
+
+
+  	}
+	}
 }
 });
 }
