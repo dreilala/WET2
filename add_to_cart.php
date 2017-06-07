@@ -5,8 +5,6 @@ session_start();
   $_SESSION["cart"]->setCart($_POST["code"],1);
 
   $products = $_SESSION["cart"]->getProducts();
-  var_dump($products);
-  die();
   $js_array = json_encode($products);
-  echo  $js_array ;
+  echo $js_array ;
  ?>

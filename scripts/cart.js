@@ -22,9 +22,9 @@ data:queryString,
 type: "POST",
 datatype:"json",
 success:function(data){
-	alert(data);
-	console.log(data);
-	console.log([]);
+	var obj = JSON.parse(data);
+	alert(obj["sum"]);
+
 	document.getElementById("warenkorb").innerHTML = "Warenkorb: " +data["sum"];
 
 	for (var prop in data) {
