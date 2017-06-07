@@ -70,7 +70,8 @@ class products {
                   <input type="button" id="add_
                   <?php echo $zeile->Name; ?>
                   " value="Add to cart" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
-                  <input type="button" id="added_<?php echo $zeile->Name; ?>" value="update" class="btnAdded" />
+                  <input type="number" id="amount_<?php echo $zeile->Name; ?>" value="update" class="btnAdded" style="display:none;"/>
+                  <input type="button" id="added_<?php echo $zeile->Name; ?>" value="update" class="btnAdded" style="display:none;"/>
 
                   </div>
                 </div>
