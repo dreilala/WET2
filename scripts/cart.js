@@ -34,8 +34,7 @@ success:function(data){
 				if (prop!="sum"){
 
 						var id = "amount_"+prop;
-
-						alert(id);
+						id = id.replace(/\s/g, '');
 						document.getElementById(id).innerHTML = obj[prop] ;
 				}
 
@@ -47,3 +46,7 @@ success:function(data){
 }
 });
 }
+
+$( document ).ready(function() {
+		console.log( "document loaded" );
+});
