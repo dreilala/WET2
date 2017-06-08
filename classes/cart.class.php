@@ -25,8 +25,24 @@ class cart{
 
   }
 
-  public function setCart($product,$menge){
-    $this->products[$product]=$menge;
+  public function addToCart($product){
+    if(isset($this->products[$product])){
+      $this->products[$product]=$this->products[$product]+1;
+    } else {
+      $this->products[$product] = 1;
+    }
+    $this->setSum();
+
+  }
+
+  public function removeFromCart($product){
+    if(isset($this->products[$product])){
+      if($this->products[$product]>0){
+        $this->products[$product]=$this->products[$product]-1;
+      }
+    } else {
+      $this->products[$product] = 0;
+    }
     $this->setSum();
 
   }

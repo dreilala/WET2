@@ -67,12 +67,12 @@ class products {
                   </div>
                   <div class='m-b-10px'>
 
-                  <input type="button" id="add_
-                  <?php echo $zeile->Name; ?>
-                  " value="Add to cart" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
-                  <input type="number" id="amount_<?php echo $zeile->Name; ?>" value="update" class="btnAdded" style="display:none;"/>
-                  <input type="button" id="added_<?php echo $zeile->Name; ?>" value="update" class="btnAdded" style="display:none;"/>
+                  <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
+                  <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="-" class="btnAddAction cart-action" onClick = "cartAction('remove',' <?php echo $zeile->Name; ?>')" />
 
+                  <div id="amount_<?php echo $zeile->Name; ?>" >
+                    0
+                  </div>
                   </div>
                 </div>
               </div>

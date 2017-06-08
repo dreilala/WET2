@@ -5,7 +5,7 @@ function cartAction(action,name) {
 	if(action != "") {
 		switch(action) {
 			case "add":
-				queryString = 'action='+action+'&code='+ name+'&quantity='+$("#qty_"+name).val();
+				queryString = 'action='+action+'&code='+ name;
 			break;
 			case "remove":
 				queryString = 'action='+action+'&code='+ name;
@@ -33,9 +33,10 @@ success:function(data){
 
 				if (prop!="sum"){
 
-						alert("amount_"+prop);
-						$("amount_"+prop).val(obj[prop]);
-						$("amount_"+prop).attr("style","display:inline;");
+						var id = "amount_"+prop;
+
+						alert(id);
+						document.getElementById(id).innerHTML = obj[prop] ;
 				}
 
 
