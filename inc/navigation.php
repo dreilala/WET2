@@ -34,7 +34,7 @@ if (isset($_COOKIE["userid"])) {
                             echo "<a href='index.php?page=customerinfo'>$zeile->kunden</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='index.php?page=addProduct'>$zeile->produkt</a>";
+                            echo "<a href='index.php?page=ListProducts'>$zeile->produkt</a>";
                             echo "</li>";
                             echo "<li>";
                             echo "<a href='index.php?page=voucher'>$zeile->gutschein</a>";
