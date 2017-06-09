@@ -31,8 +31,7 @@ success:function(data){
 
 				if (prop!="sum"){
 
-						var id = "amount_"+prop;
-						id = id.replace(/\s/g, '');
+						var id = "amount_"+prop.trim();
 						document.getElementById(id).innerHTML = obj[prop] ;
 				}
 
