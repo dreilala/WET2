@@ -39,9 +39,10 @@ include "classes\User.Class.php";
                 $username = $_POST['Inputbenutzer'];
                 $password = $_POST['Inputpass'];
                 $passwordwdh = $_POST['Inputpass2'];
+                $paymentmethod = $_POST['Inputpaymentmethod'];
+                $number = $_POST['Inputnumber'];
 
-                $User->addUser($anrede, $vname, $nname, $strasse, $plz, $ort, $mail, $username, $password, $passwordwdh);
-                $User->addPayment($username, $paymentmethod, $number);
+                $User->addUser($anrede, $vname, $nname, $strasse, $plz, $ort, $mail, $username, $password, $passwordwdh, $paymentmethod, $number);
             }
             ?>
 

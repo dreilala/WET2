@@ -55,9 +55,10 @@ class User {
         }
     }
 
-    public function addUser($anrede, $vname, $nname, $strasse, $plz, $ort, $mail, $username, $password, $passwordwdh) {
+    public function addUser($anrede, $vname, $nname, $strasse, $plz, $ort, $mail, $username, $password, $passwordwdh, $paymentmethod, $number) {
         $this->validateUserdata($vname, $nname, $strasse, $plz, $ort, $mail, $username);
         $this->validatePassword($password, $passwordwdh);
+        $this->addPayment($username, $paymentmethod, $number);
         $password = md5($password);
 
         $sql = "SELECT id FROM users WHERE username = '$username'";
@@ -69,18 +70,18 @@ class User {
             $eintragenUser = $this->conn->query($eintragUser);
 
             if ($eintragenUser == true) {
-                header("Location: login.php");
+                header("Location: index.php?page=login");
                 exit;
             } else {
                 $userError = "Fehler beim speichern der Daten in der DB. Bitte später nochmal versuchen";
-                $errorOccurred = 2;
-                header("Location: register.php");
+                $$errorOccurred = 2;
+                header("Location: index.php");
                 exit;
             }
         } else {
             $userError = "Benutzername bereits vergeben";
-            $errorOccurred = 2;
-            header("Location: register.php");
+            $$errorOccurred = 2;
+            header("Location: index.php?page=register");
             exit;
         }
     }
@@ -88,7 +89,7 @@ class User {
     private function validatePaymentdata($paymentmethod, $number) {
         $errorOccurred = 0;
 
-        if (($paymentmethod == "Kreditkarte" || $paymentmethod == "Bankomatkarte") && !preg_match("/[0-9]{13,16}/", $number)) {
+        if (($paymentmethod == "Kreditkarte" || $paymentmethod == "Bankomatkarte") && !preg_match("/^[0-9]{13,16}/", $number)) {
             $numberError = "Bitte gültige Kartennummer eingeben.";
             $errorOccurred = 2;
         }
@@ -100,13 +101,11 @@ class User {
             $eintragPayment = "INSERT INTO paymentinfo(username, paymentmethod, number) VALUES ('$username','$paymentmethod','$number')";
             $eintragenPayment = $this->conn->query($eintragPayment);
 
-            if ($eintragenPayment == true) {
-                header("Location: login.php");
-                exit;
-            } else {
+            if ($eintragenPayment == false) {
+
                 $userError = "Fehler beim speichern der Daten in der DB. Bitte später nochmal versuchen";
                 $errorOccurred = 2;
-                header("Location: register.php");
+                header("Location: index.php");
                 exit;
             }
         }
@@ -114,22 +113,22 @@ class User {
 
     public function changeUser($id, $anrede, $vname, $nname, $strasse, $plz, $ort, $mail, $username, $password) {
         $this->validateUserdata($vname, $nname, $strasse, $plz, $ort, $mail, $username);
-        
+
         $password = md5($password);
 
         $ergebnis = $this->conn->query("SELECT passwd FROM users WHERE id = '$id' LIMIT 1");
         $row = $ergebnis->fetch_object();
-        if ($row->passwd == $password && $errorOccurred == 0) {
+        if ($row->passwd == $password && $$errorOccurred == 0) {
             $eintragUser = "update users set anrede = '$anrede', vorname = '$vname', nachname = '$nname', strasse = '$strasse', plz = '$plz', ort = '$ort', mail = '$mail', username = '$username' where id='$id'";
 
             $eintragenUser = $this->conn->query($eintragUser);
             if ($eintragenUser == true) {
-                header("Location: showOwnData.php");
+                header("Location: index.php?page=showOwnData");
                 exit;
             } else {
                 $userError = "Fehler beim speichern der Daten in der DB. Bitte später nochmal versuchen";
-                $errorOccurred = 2;
-                header("Location: ChangeOwnData.php");
+                $$errorOccurred = 2;
+                header("Location: index.php?page=ChangeOwnData");
                 exit;
             }
         }
@@ -137,24 +136,24 @@ class User {
 
     public function changePassword($id, $passwordold, $passwordnew, $passwordnew2) {
         $this->validatePassword($passwordnew, $passwordnew2);
-        
+
         $passwordnew = md5($passwordnew);
         $passwordold = md5($passwordold);
 
         $ergebnis = $this->conn->query("SELECT passwd FROM users WHERE id = '$id' LIMIT 1");
         $row = $ergebnis->fetch_object();
-        
-        if ($row->passwd == $passwordold && $errorOccurred == 0) {
+
+        if ($row->passwd == $passwordold && $$errorOccurred == 0) {
             $eintrag = "update users set passwd = '$passwordnew' where id='$id'";
 
             $eintragen = $this->conn->query($eintrag);
             if ($eintragen == true) {
-                header("Location: showOwnData.php");
+                header("Location: index.php?page=showOwnData");
                 exit;
             } else {
                 $userError = "Fehler beim speichern der Daten in der DB. Bitte später nochmal versuchen";
-                $errorOccurred = 2;
-                header("Location: changePassword.php");
+                $$errorOccurred = 2;
+                header("Location: index.php?page=changePassword");
                 exit;
             }
         }
