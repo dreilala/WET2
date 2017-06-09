@@ -49,8 +49,11 @@ and open the template in the editor.
                     Bild
                     <input type="file" name="mypicture" accept="image/*" required="true">
                 </div>
-                <button type='submit' class='btn btn-default'>Hinzufügen</button>
+                <button type='submit' class='btn btn-success'>Hinzufügen</button>
             </form>
+            <div class="col-md-8">
+            <a class="btn btn-default" href="index.php?page=ListProducts">Zurück</a>
+            </div>
         </div>
     </body>
 </html>
