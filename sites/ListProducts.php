@@ -11,6 +11,10 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
+            <h1>Produkt hinzufügen</h1>
+            <a class="btn btn-default" href="ChangeProducts.php?action=add">Hinzufügen</a>
+            <br>
+
             <h1>Liste aller Produkte</h1>
 
             <?php
@@ -35,7 +39,7 @@ and open the template in the editor.
                     echo "<td>$row->pathtopicture</td>";
                     echo "<td>$row->price</td>";
                     //echo '<td><a class="btn btn-default" href="ChangeStateCustomer.php?action=deactivate&id=' . $row->id . '">Deaktivieren</a><a class="btn btn-default" href="ChangeStateCustomer.php?action=activate&id=' . $row->id . '">Aktivieren</a></td>';
-                    echo '<td><a class="btn btn-default" href="ChangeStateCustomer.php?action=change">Bearbeiten</a><a class="btn btn-default" href="ChangeStateCustomer.php?action=delete">Löschen</a></td>';
+                    echo '<td><a class="btn btn-default" href="ChangeProducts.php?action=change">Bearbeiten</a><a class="btn btn-default" href="ChangeProducts.php?action=delete">Löschen</a></td>';
                     echo "</td>";
                 }
                 echo "</table>";
