@@ -5,8 +5,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-session_start();
-include "config/settings.php";
+/*session_start();
+include "config/settings.php";*/
 include "classes/User.Class.php";
 ?>
 <html>
@@ -76,9 +76,9 @@ include "classes/User.Class.php";
                     echo "</tr>";
                 }
                 echo "</table>";
-                echo "<p><a href='changeOwnData.php' class='btn btn-default'>Bearbeiten</a></p>";
-                echo "<p><a href='changePassword.php' class='btn btn-danger'>Passwort ändern</a></p>";
-                echo "<p><a href='addPaymentData.php' class='btn btn-success'>Zahlungsdaten hinzufügen</a></p>";
+                echo "<p><a href='index.php?page=changeOwnData' class='btn btn-default'>Bearbeiten</a></p>";
+                echo "<p><a href='index.php?page=changePassword' class='btn btn-danger'>Passwort ändern</a></p>";
+                echo "<p><a href='index.php?page=addPaymentData' class='btn btn-success'>Zahlungsdaten hinzufügen</a></p>";
                 //echo "</div>";
             }
             $dbconn->close();

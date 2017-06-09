@@ -1,6 +1,6 @@
 <?php
-session_start();
-include "config/settings.php";
+/*session_start();*/
+//include "config/settings.php";
 ?>
 <?php
 if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['check'] == true) {
@@ -34,7 +34,7 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
             header("Location: index.php");
             exit;
         } else {
-            header("Location: login.php");
+            header("Location: index.php?page=login");
             exit;
         }
     }
@@ -50,12 +50,12 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
     </head>
     <body>
         <div class="container">
             <h1>Login</h1>
-            <form class='col-md-8' action='login.php' method='Post'>
+            <form class='col-md-8' action='index.php?page=login' method='Post'>
                 <div class='form-group'>
                     User
                     <input type='text' class='form-control' name='InputUser' placeholder='User'>

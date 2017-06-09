@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    session_start();
-    include "config\settings.php";
+    /*session_start();
+    include "config\settings.php";*/
     include "classes\User.Class.php";
 
     $id = $_SESSION['userid'];
@@ -43,7 +43,7 @@
         <div class="container">
         <h3>Update Password</h3>
 
-        <form class="col-md-8" action="changePassword.php" method="POST">
+        <form class="col-md-8" action="index.php?page=changePassword" method="POST">
 
             <div class='form-group'>
                 Altes Passwort
@@ -59,7 +59,7 @@
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn btn-success">Update</button>
-                <a class="btn" href="showOwnData.php">Back</a>
+                <a class="btn" href="index.php?page=showOwnData">Back</a>
             </div>
         </form>
         </div>

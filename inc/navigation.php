@@ -31,16 +31,16 @@ if (isset($_COOKIE["userid"])) {
                             echo "<a href='index.php'>$zeile->home</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='customerinfo.php'>$zeile->kunden</a>";
+                            echo "<a href='index.php?page=customerinfo'>$zeile->kunden</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='addProduct.php'>$zeile->produkt</a>";
+                            echo "<a href='index.php?page=addProduct'>$zeile->produkt</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='voucher.php'>$zeile->gutschein</a>";
+                            echo "<a href='index.php?page=voucher'>$zeile->gutschein</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='logout.php'>$zeile->logout</a>";
+                            echo "<a href='index.php?page=logout'>$zeile->logout</a>";
                             echo "</li>";
                         }
                     } else {
@@ -50,16 +50,16 @@ if (isset($_COOKIE["userid"])) {
                             echo "<a href='index.php'>$zeile->home</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='products.php'>$zeile->produkt</a>";
+                            echo "<a href='index.php?page=products'>$zeile->produkt</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
+                            echo "<a href='index.php?page=warenkorb'>$zeile->warenkorb</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='showOwnData.php'>$zeile->konto</a>";
+                            echo "<a href='index.php?page=showOwnData'>$zeile->konto</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='logout.php'>$zeile->logout</a>";
+                            echo "<a href='index.php?page=logout'>$zeile->logout</a>";
                             echo "</li>";
                         }
                     }
@@ -70,16 +70,16 @@ if (isset($_COOKIE["userid"])) {
                         echo "<a href='index.php'>$zeile->home</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='products.php'>$zeile->produkt</a>";
+                        echo "<a href='index.php?page=products'>$zeile->produkt</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='warenkorb.php'>$zeile->warenkorb</a>";
+                        echo "<a href='index.php?page=warenkorb'>$zeile->warenkorb</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='register.php'>$zeile->register</a>";
+                        echo "<a href='index.php?page=register'>$zeile->register</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='login.php'>$zeile->login</a>";
+                        echo "<a href='index.php?page=login'>$zeile->login</a>";
                         echo "</li>";
                     }
                 }

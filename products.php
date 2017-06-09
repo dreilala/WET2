@@ -20,10 +20,10 @@
 </head>
 <body>
   <?php
-  session_start();
+  //session_start();
   include("classes\Products.Class.php");
   include("classes\Cart.Class.php");
-  include("config\settings.php");
+  //include("config\settings.php");
   if(!isset($_SESSION["cart"])){
     $_SESSION["cart"] = new cart($dbconn);
   }

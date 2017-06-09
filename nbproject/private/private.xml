@@ -5,9 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/WET2/index.php</file>
             <file>file:/C:/xampp/htdocs/WET2/login.php</file>
-            <file>file:/C:/xampp/htdocs/WET2/voucher.php</file>
-            <file>file:/C:/xampp/htdocs/WET2/register.php</file>
-            <file>file:/C:/xampp/htdocs/WET2/addPaymentData.php</file>
+            <file>file:/C:/xampp/htdocs/WET2/classes/User.Class.php</file>
+            <file>file:/C:/xampp/htdocs/WET2/navigation.php</file>
+            <file>file:/C:/xampp/htdocs/WET2/products.php</file>
         </group>
     </open-files>
 </project-private>

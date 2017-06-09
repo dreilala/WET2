@@ -5,9 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-session_start();
-include "config/settings.php";
-include("classes\User.Class.php");
+/*session_start();
+include "config/settings.php";*/ 
+include "classes\User.Class.php";
 ?>
 <html>
     <head>
@@ -45,7 +45,7 @@ include("classes\User.Class.php");
             }
             ?>
 
-            <form class='col-md-8' action='register.php' method='Post'>
+            <form class='col-md-8' action='index.php?page=register' method='Post'>
                 <div id="errors" >
                     <?php
                     echo "$userError <br />";

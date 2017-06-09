@@ -6,8 +6,8 @@ and open the template in the editor.
 -->
 
 <?php
-session_start();
-include "config/settings.php";
+/*session_start();
+include "config/settings.php";*/
 ?>
 <html>
     <head>

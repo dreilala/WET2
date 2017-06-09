@@ -5,8 +5,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-session_start();
-include "config/settings.php";
+/*session_start();
+include "config/settings.php";*/
 ?>
 <html>
     <head>
@@ -33,17 +33,17 @@ include "config/settings.php";
                 $eintragenPayment = $dbconn->query($eintragPayment);
 
                 if ($eintragenPayment == true) {
-                    header("Location: showOwnData.php");
+                    header("Location: index.php?page=showOwnData");
                     exit;
                 } else {
                     $userError = "Fehler beim Speichern der Daten in der DB. Bitte später nochmal versuchen";
                     $errorOccurred = 2;
-                    header("Location: addPaymentData.php");
+                    header("Location: index.php?page=addPaymentData");
                     exit;
                 }
             }
             ?>
-            <form class="col-md-8" action="addPaymentData.php" method="POST">
+            <form class="col-md-8" action="index.php?page=addPaymentData" method="POST">
                 <div class='form-group'>
                     Zahlungsinformation
                     <select class="form-control" name='Inputpaymentmethod' required="true">

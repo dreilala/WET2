@@ -5,9 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-session_start();
+/*session_start();
 include "dbconn.php";
-include "navigation.php";
+include "navigation.php";*/
 ?>
 
 <html>

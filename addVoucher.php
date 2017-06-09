@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include "dbconn.php";
-include "navigation.php";
+include "inc/dbconn.php";
+//include "navigation.php";
 
 
 $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -28,7 +28,7 @@ $sql = "INSERT INTO voucher (code, valid, value, state) VALUES ('$randomString',
 $result = $dbconn->query($sql);
 
 if ($result == true) {
-    header("Location: voucher.php");
+    header("Location: index.php?page=voucher");
     exit;
 }
 
