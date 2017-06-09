@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<?php
-/* session_start();
-  include "dbconn.php";
-  include "navigation.php"; */
-?>
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Gutscheine</title>
-    </head>
-    <body>
         <div class="container">
             <h1>Gutschein hinzufügen</h1>
             <form action='addVoucher.php' method='Post'>
@@ -59,6 +41,3 @@ and open the template in the editor.
             </tbody>
         </table>
     </div>
-
-</body>
-</html>

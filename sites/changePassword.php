@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php
     /*session_start();
     include "config\settings.php";*/
@@ -34,12 +33,6 @@
         $result2 = $dbconn->query($sql2);
     }
     ?>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-
-    <body>
         <div class="container">
         <h3>Update Password</h3>
 
@@ -63,5 +56,3 @@
             </div>
         </form>
         </div>
-    </body>
-</html>

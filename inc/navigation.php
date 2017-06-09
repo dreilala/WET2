@@ -86,23 +86,15 @@ if (isset($_COOKIE["userid"])) {
                 ?>
                 <li><a id="warenkorb" href="#">Korb: 0</a></li>
             </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+            <ul class="nav navbar-nav navbar-right">
+                <?php
+                if (isset($_SESSION["userid"])) {
+                    echo "<p class='navbar-text'>Sie sind eingeloggt!<p>";
+                }
+                ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
-<nav class="navbar navbar-default" role="navigation">
-</nav>
-<?php
-if (isset($_SESSION["userid"])) {
-echo "Sie sind eingeloggt... ";
-
-
-}
-?>

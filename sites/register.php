@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <?php
 /*session_start();
 include "config/settings.php";*/ 
 include "classes/User.Class.php";
 ?>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Registrierung</title>
-    </head>
-    <body>
         <div class="container">
             <h1>Registrierung</h1>
             <?php
@@ -106,5 +94,3 @@ include "classes/User.Class.php";
                 <button type='submit' class='btn btn-default'>Registrieren</button>
             </form>
         </div>
-    </body>
-</html>

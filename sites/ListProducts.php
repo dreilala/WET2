@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Produkte bearbeiten</title>
-    </head>
-    <body>
         <div class="container">
             <h1>Produkt hinzufügen</h1>
             <a class="btn btn-default" href="ChangeProducts.php?action=add">Hinzufügen</a>
@@ -47,5 +35,3 @@ and open the template in the editor.
             $dbconn->close();
             ?>
         </div>
-    </body>
-</html>
