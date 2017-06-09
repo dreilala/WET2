@@ -7,9 +7,9 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
     $user = $_POST["InputUser"];
     $password = md5($_POST["InputPassword"]);
 
-    $ergebnis = $dbconn->query("SELECT passwd FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
+    $ergebnis = $dbconn->query("SELECT passwd, state FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
     $row = $ergebnis->fetch_object();
-    if ($row->passwd == $password) {
+    if ($row->passwd == $password && $row->state == active) {
 
         $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
         $getid = $erg->fetch_object();
@@ -24,9 +24,9 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
         $user = $_POST["InputUser"];
         $password = md5($_POST["InputPassword"]);
 
-        $ergebnis = $dbconn->query("SELECT passwd FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
+        $ergebnis = $dbconn->query("SELECT passwd, state FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
         $row = $ergebnis->fetch_object();
-        if ($row->passwd == $password) {
+        if ($row->passwd == $password && $row->state == active) {
             $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
             $getid = $erg->fetch_object();
             $id = $getid->id;
