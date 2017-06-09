@@ -3,7 +3,7 @@
     <?php
     /*session_start();
     include "config\settings.php";*/
-    include "classes\User.Class.php";
+    include "classes/User.Class.php";
 
     $id = $_SESSION['userid'];
 

@@ -3,13 +3,13 @@
 //include "config/settings.php";
 ?>
 <?php
-if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['check'] == true) {
+if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && isset($_POST['check']) && $_POST['check'] == true) {
     $user = $_POST["InputUser"];
     $password = md5($_POST["InputPassword"]);
 
     $ergebnis = $dbconn->query("SELECT passwd, state FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
     $row = $ergebnis->fetch_object();
-    if ($row->passwd == $password && $row->state == active) {
+    if ($row->passwd == $password && $row->state == "active") {
 
         $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
         $getid = $erg->fetch_object();
@@ -26,7 +26,7 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && $_POST['chec
 
         $ergebnis = $dbconn->query("SELECT passwd, state FROM users WHERE username LIKE '" . $user . "' LIMIT 1");
         $row = $ergebnis->fetch_object();
-        if ($row->passwd == $password && $row->state == active) {
+        if ($row->passwd == $password && $row->state == "active") {
             $erg = $dbconn->query("SELECT id FROM users WHERE username ='" . $user . "' LIMIT 1");
             $getid = $erg->fetch_object();
             $id = $getid->id;

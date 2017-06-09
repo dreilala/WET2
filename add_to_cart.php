@@ -1,5 +1,5 @@
 <?php
-  include_once("classes\cart.class.php");
+  include_once("classes/cart.class.php");
   include_once("dbconn.php");
 session_start();
   if($_POST["action"]=="remove"){

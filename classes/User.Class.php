@@ -66,7 +66,7 @@ class User {
         $menge = $result->num_rows;
 
         if ($menge == 0 && $errorOccurred == 0) {
-            $eintragUser = "INSERT INTO users (anrede, vorname, nachname, strasse, plz, ort, mail, username, passwd) VALUES ('$anrede', '$vname', '$nname', '$strasse', '$plz', '$ort', '$mail', '$username', '$password')";
+            $eintragUser = "INSERT INTO users (anrede, vorname, nachname, strasse, plz, ort, mail, username, passwd, state) VALUES ('$anrede', '$vname', '$nname', '$strasse', '$plz', '$ort', '$mail', '$username', '$password', 'active')";
             $eintragenUser = $this->conn->query($eintragUser);
 
             if ($eintragenUser == true) {
