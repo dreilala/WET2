@@ -10,7 +10,7 @@ if (!empty($_GET['page'])) {
         include($file);
         // if $page has a value, and the file exists, include it
     } else {
-        include("inc/404.php");
+        include("sites/404.php");
         // if $page has a value, but the file doesn't exist, include 404.php
     }
 }

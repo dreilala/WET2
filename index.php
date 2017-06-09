@@ -13,7 +13,7 @@ session_start();
     </head>
     <body>
         <?php
-        include "inc/settings.php";       
+        include "inc/settings.php";
         ?>
     </body>
 </html>
