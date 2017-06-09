@@ -17,13 +17,11 @@ function cartAction(action,name) {
 	}
 
 jQuery.ajax({
-url: "add_to_cart.php",
+url: "./add_to_cart.php",
 data:queryString,
 type: "POST",
-datatype:"json",
 success:function(data){
 	var obj = JSON.parse(data);
-	alert(obj["sum"]);
 
 	document.getElementById("warenkorb").innerHTML = "Warenkorb: " +obj["sum"];
 
