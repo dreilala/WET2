@@ -19,6 +19,7 @@ class products {
   }
 
 
+
   public function displayAll(){
 
     $query = "SELECT * FROM products";

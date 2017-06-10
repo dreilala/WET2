@@ -7,4 +7,5 @@ if(!isset($products)){
 }
 $products->displayAll();
 
+
 ?>

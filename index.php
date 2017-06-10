@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 ob_start();
 ?>
@@ -24,7 +26,6 @@ ob_start();
         include "inc/dbconn.php";
         include "classes/Products.Class.php";
         include "classes/cart.Class.php";
-
         include "inc/navigation.php";
         include "inc/settings.php";
         ?>

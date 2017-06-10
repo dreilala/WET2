@@ -13,6 +13,9 @@ function cartAction(action,name) {
 			case "empty":
 				queryString = 'action='+action;
 			break;
+			case "refresh":
+				queryString = 'action='+action;
+			break;
 		}
 	}
 

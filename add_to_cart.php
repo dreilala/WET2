@@ -15,7 +15,14 @@ session_start();
 
     $_SESSION["cart"]->addToCart($_POST["code"]);
   }
+
   $products = $_SESSION["cart"]->getProducts();
+  foreach($products as $prod=>$num){
+
+      $id="prod_".$prod;
+      $_SESSION[$id]=$num;
+    
+  }
   $js_array = json_encode($products);
   $_SESSION["cartsum"]=$products["sum"];
   echo $js_array ;
