@@ -1,9 +1,6 @@
 <?php
 
-include "inc/dbconn.php";
 
-include "classes/Products.Class.php";
-include "classes/cart.Class.php";
 
 if (!empty($_GET['page'])) {
 
@@ -15,7 +12,7 @@ if (!empty($_GET['page'])) {
         } else {
             include($file);
         }
-        
+
         // if $page has a value, and the file exists, include it
     } else {
         include("sites/404.php");

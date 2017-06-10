@@ -25,6 +25,11 @@ class cart{
 
   }
 
+  public function getSum(){
+    $this->setSum();
+    return $this->products["sum"];
+  }
+
   public function addToCart($product){
     if(isset($this->products[$product])){
       $this->products[$product]=$this->products[$product]+1;
@@ -57,6 +62,11 @@ class cart{
     return $this->products;
   }
 
+  public function displayCart(){
+    foreach($products as $product){
+      include("cartDisp.php");
+    }
+  }
 }
 
 

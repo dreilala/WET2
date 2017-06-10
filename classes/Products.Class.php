@@ -17,6 +17,8 @@ class products {
   public function addImage($name) {
 
   }
+
+
   public function displayAll(){
 
     $query = "SELECT * FROM products";

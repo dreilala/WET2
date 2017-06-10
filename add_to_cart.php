@@ -17,5 +17,6 @@ session_start();
   }
   $products = $_SESSION["cart"]->getProducts();
   $js_array = json_encode($products);
+  $_SESSION["cartsum"]=$products["sum"];
   echo $js_array ;
  ?>

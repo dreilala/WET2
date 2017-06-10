@@ -21,6 +21,10 @@ ob_start();
     </head>
     <body>
         <?php
+        include "inc/dbconn.php";
+        include "classes/Products.Class.php";
+        include "classes/cart.Class.php";
+
         include "inc/navigation.php";
         include "inc/settings.php";
         ?>
