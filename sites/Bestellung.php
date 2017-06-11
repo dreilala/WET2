@@ -13,7 +13,6 @@ foreach($_SESSION as $key=>$val){
       $order=new Order($dbconn,$_SESSION["userid"]);
       if($_POST["Gutscheincode"]){
         $query = "SELECT * FROM voucher where code = '".$_POST["Gutscheincode"]."'";
-        echo $query;
         if($ergebnis = $dbconn->query($query)){
           $zeile = $ergebnis->fetch_object();
 
