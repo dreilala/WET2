@@ -26,13 +26,16 @@ foreach($_SESSION as $key=>$val){
 
 }
  ?>
-  
+
   <div class='form-group'>
       <label>Gutscheincode</label>
       <input type="text" class="form-control" name="Gutscheincode" value="">
   </div>
-   
-  <input type="submit" class="btn btn-primary pull-right" name="submit" value="Bestellen">
+   <?php
+   if (isset($_SESSION["userid"])){
+     echo    "<input type='submit' class='btn btn-primary pull-right' name='submit' value='Bestellen'>";
+   }
+    ?>
 
 </form>
 
