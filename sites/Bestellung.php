@@ -12,12 +12,12 @@ foreach($_SESSION as $key=>$val){
     if (!isset($order)){
       $order=new Order($dbconn,$_SESSION["userid"]);
       if($_POST["Gutscheincode"]){
-        $query = "SELECT * FROM voucher where Name = '".$_POST["Gutscheincode"]."'";
+        $query = "SELECT * FROM voucher where code = '".$_POST["Gutscheincode"]."'";
         echo $query;
         if($ergebnis = $dbconn->query($query)){
           $zeile = $ergebnis->fetch_object();
 
-                $order->addProduct($_SESSION["userid"],"Gutschein",-1*$zeile->value,"1");
+                $order->addProduct("Gutschein",-1*$zeile->value,"1");
         }
 
       }
