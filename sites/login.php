@@ -18,6 +18,9 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && isset($_POST
         //print_r($_SESSION["userid"]);
         header("Location: index.php");
         exit;
+    } else {
+        header("Location: index.php?page=login");
+        exit;
     }
 } else {
     if (isset($_POST['InputUser']) && isset($_POST['InputPassword'])) {
