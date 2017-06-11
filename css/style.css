@@ -1,0 +1,17 @@
+body {
+	padding-top: 70px;
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+.thumbnail {
+	border-radius: 0px;
+	padding: 10px;
+}
+
+.navbar-default {
+	background-color: #e9e9e9;
+}
+

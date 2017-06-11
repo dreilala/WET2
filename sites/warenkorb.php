@@ -1,4 +1,5 @@
 <div class='container'>
+<h1>Warenkorb</h1>
 <form method="post" action="index.php?page=Bestellung">
 <?php
 
@@ -25,9 +26,13 @@ foreach($_SESSION as $key=>$val){
 
 }
  ?>
-
-   <input type="text" class="centered" name="Gutscheincode" value="">
-  <input type="submit" class="pull-right" name="submit" value="Bestellen">
+  
+  <div class='form-group'>
+      <label>Gutscheincode</label>
+      <input type="text" class="form-control" name="Gutscheincode" value="">
+  </div>
+   
+  <input type="submit" class="btn btn-primary pull-right" name="submit" value="Bestellen">
 
 </form>
 

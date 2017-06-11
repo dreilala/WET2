@@ -44,16 +44,16 @@ if (isset($_POST['InputUser']) && isset($_POST['InputPassword']) && isset($_POST
     <h1>Login</h1>
     <form class='col-md-8' action='index.php?page=login' method='Post'>
         <div class='form-group'>
-            User
+            <label>User</label>
             <input type='text' class='form-control' name='InputUser' placeholder='User'>
         </div>
         <div class='form-group'>
-            Password
+            <label>Password</label>
             <input type='password' class='form-control' name='InputPassword' placeholder='Password'>
         </div>
         <div class='checkbox'>
             <label><input type='checkbox' name='check'>Login merken</label>
         </div>
-        <button type='submit' class='btn btn-default'>Submit</button>
+        <button type='submit' class='btn btn-primary'>Submit</button>
     </form>
 </div>

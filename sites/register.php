@@ -36,7 +36,7 @@ include "classes/User.Class.php";
                     ?>
                 </div>
                 <div class='form-group'>
-                    Anrede
+                    <label>Anrede</label>
                     <select class="form-control" name='InputAnrede' required="true">
                         <option></option>
                         <option>Frau</option>
@@ -44,43 +44,43 @@ include "classes/User.Class.php";
                     </select>
                 </div>
                 <div class='form-group'>
-                    Vorname
+                    <label>Vorname</label>
                     <input type='text' class='form-control' name='Inputvname' placeholder='Vorname' required="true" pattern="[a-züäöA-ZÖÜÄ -]*$">
                 </div>
                 <div class='form-group'>
-                    Nachname
+                    <label>Nachname</label>
                     <input type='text' class='form-control' name='Inputnname' placeholder='Nachname' required="true" pattern="[a-züäöA-ZÖÜÄ -]*$">
                 </div>
                 <div class='form-group'>
-                    Strasse
+                    <label>Strasse</label>
                     <input type='text' class='form-control' name='Inputstrasse' placeholder='Straße' required="true" pattern="[a-züäöA-ZÖÜÄ -]*$">
                 </div>
                 <div class='form-group'>
-                    PLZ
+                    <label>PLZ</label>
                     <input type='text' class='form-control' name='Inputplz' placeholder='PLZ' required="true" pattern="[0-9]{4}">
                 </div>
                 <div class='form-group'>
-                    Ort
+                    <label>Ort</label>
                     <input type='text' class='form-control' name='Inputort' placeholder='Ort' required="true" pattern="[a-züäöA-ZÖÜÄ -]*$">
                 </div>
                 <div class='form-group'>
-                    Email Adresse
+                    <label>Email Adresse</label>
                     <input type='email' class='form-control' name='Inputmail' placeholder='Mail' required="true">
                 </div>
                 <div class='form-group'>
-                    Benutzername
+                    <label>Benutzername</label>
                     <input type='text' class='form-control' name='Inputbenutzer' placeholder='Benutzer' required="true" pattern="[a-zA-Z0-9]*$">
                 </div>
                 <div class='form-group'>
-                    Passwort
+                    <label>Passwort</label>
                     <input type='password' class='form-control' name='Inputpass' placeholder='Passwort' required="true" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
                 </div>
                 <div class='form-group'>
-                    Passwort wiederholen
+                    <label>Passwort wiederholen</label>
                     <input type='password' class='form-control' name='Inputpass2' placeholder='Passwort' required="true">
                 </div>
                 <div class='form-group'>
-                    Zahlungsinformation
+                    <label>Zahlungsinformation</label>
                     <select class="form-control" name='Inputpaymentmethod' required="true">
                         <option></option>
                         <option>Kreditkarte</option>
@@ -88,9 +88,9 @@ include "classes/User.Class.php";
                     </select>
                 </div>
                 <div class='form-group'>
-                    Nummer
+                    <label>Nummer</label>
                     <input type='text' class='form-control' name='Inputnumber' placeholder='Nummer' required="true" pattern="[0-9]{13,16}">
                 </div>
-                <button type='submit' class='btn btn-default'>Registrieren</button>
+                <button type='submit' class='btn btn-primary'>Registrieren</button>
             </form>
         </div>

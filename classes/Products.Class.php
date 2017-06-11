@@ -33,10 +33,9 @@ class products {
      <div class="container" onload="cartRefresh();">
 
        <div class="row">
+       <h1>Produkte</h1>
 
-         <div class="col-md-9">
-
-           <div class="row">
+        
 <?php
     while ($zeile = $ergebnis->fetch_object()) {
       //pro DB-Zeile wird neues User-Objekt erzeugt
@@ -48,7 +47,7 @@ class products {
 
 
 
-              <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="col-xs-4">
                 <div class="thumbnail">
 <?php
                   echo "<img src='images/".$zeile->pathtopicture."' alt='' onerror=\"this.src='images/default.jpg'\">"
@@ -61,21 +60,19 @@ class products {
 
                     <h4>
 <?php
-                      echo "<a href='#'>$zeile->Name</a>";
+                      echo "<span>$zeile->Name</span>";
 ?>
                     </h4>
                   </div>
-                  <div class="ratings">
+                  <!--<div class="ratings">
 
-                  </div>
-                  <div class='m-b-10px'>
+                  </div>-->
+                  <div>
+                  
+                  <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btn btn-success" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
+                  <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="–" class="btn btn-danger" onClick = "cartAction('remove',' <?php echo $zeile->Name; ?>')" />
 
-                  <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
-                  <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="-" class="btnAddAction cart-action" onClick = "cartAction('remove',' <?php echo $zeile->Name; ?>')" />
-
-                  <div id="amount_<?php echo $zeile->Name; ?>" >
-                    0
-                  </div>
+                  <span class="pull-right">Anzahl: <span id="amount_<?php echo $zeile->Name; ?>">0</span></span>
                   </div>
                 </div>
               </div>
@@ -87,8 +84,6 @@ class products {
 
     }
 ?>
-      </div>
-    </div>
 
    </div>
 
