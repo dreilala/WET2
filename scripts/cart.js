@@ -61,7 +61,10 @@ function cartRefresh() {
 						if (prop!="sum"){
 
 								var id = "amount_"+prop.trim();
-								document.getElementById(id).innerHTML = obj[prop] ;
+								var prod = document.getElementById(id);
+								if  (prod) {
+									prod.innerHTML = obj[prop];
+								}
 						}
 					}
 			}
@@ -69,6 +72,9 @@ function cartRefresh() {
 });
 }
 
+$( document ).ready(function() {
+    cartRefresh();
+});
 function getSessVariable($name) {
 	var num = 0;
 	var that=this;

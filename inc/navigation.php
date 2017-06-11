@@ -54,7 +54,8 @@ if (isset($_COOKIE["userid"])) {
                             echo "<a href='index.php?page=products'>$zeile->produkt</a>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='index.php?page=warenkorb'>$zeile->warenkorb</a>";
+
+                            echo "<a id='warenkorb' href='index.php?page=warenkorb'>$zeile->warenkorb</a>";
                             echo "</li>";
                             echo "<li>";
                             echo "<a href='index.php?page=showOwnData'>$zeile->konto</a>";
@@ -74,7 +75,8 @@ if (isset($_COOKIE["userid"])) {
                         echo "<a href='index.php?page=products'>$zeile->produkt</a>";
                         echo "</li>";
                         echo "<li>";
-                        echo "<a href='index.php?page=warenkorb'>$zeile->warenkorb</a>";
+
+                        echo "<a id='warenkorb' href='index.php?page=warenkorb'>$zeile->warenkorb</a>";
                         echo "</li>";
                         echo "<li>";
                         echo "<a href='index.php?page=register'>$zeile->register</a>";
@@ -85,7 +87,6 @@ if (isset($_COOKIE["userid"])) {
                     }
                 }
                 ?>
-                <li><a id="warenkorb" href="#">Warenkorb: <?php if(isset($_SESSION["cartsum"])){ echo $_SESSION["cartsum"]; } else { echo 0;}?></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
