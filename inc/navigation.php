@@ -87,7 +87,7 @@ if (isset($_COOKIE["userid"])) {
                     }
                 }
                 ?>
-                <li><a id="warenkorb" href="#">Warenkorb: <?php if(isset($_SESSION["cartsum"])){ echo $_SESSION["cartsum"]; } else { echo 0;}?></a></li>
+                <!-- <li><a id="warenkorb" href="#">Warenkorb: <?php if(isset($_SESSION["cartsum"])){ echo $_SESSION["cartsum"]; } else { echo 0;}?></a></li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
