@@ -1,6 +1,4 @@
-
-
-function cartAction(action,name) {
+function cartAction(action,name, price) {
 	var queryString = "";
 	if(action != "") {
 		switch(action) {
@@ -26,14 +24,14 @@ function cartAction(action,name) {
 			var obj = JSON.parse(data);
 
 			document.getElementById("warenkorb").innerHTML = "Warenkorb: " +obj["sum"];
-
+			console.log(obj);
 			for (var prop in obj) {
 		  		if (obj.hasOwnProperty(prop)) {
 		  // or if (Object.prototype.hasOwnProperty.call(obj,prop)) for safety...
-
-						if (prop!="sum"){
-
+		  				console.log(prop + "-" + name);
+						if (prop == name){
 								var id = "amount_"+prop.trim();
+								console.log(id);
 								document.getElementById(id).innerHTML = obj[prop] ;
 						}
 
@@ -42,6 +40,11 @@ function cartAction(action,name) {
 
 		  	}
 			}
+			console.log(name + " - " + price);
+			if(typeof price !== "undefined") {
+				setPrice(name, price);
+			}
+			
 		}
 });
 }
@@ -75,26 +78,35 @@ function cartRefresh() {
 $( document ).ready(function() {
     cartRefresh();
 });
+/*
 function getSessVariable($name) {
 	var num = 0;
-	var that=this;
 	jQuery.ajax({
 		url: "./getSessVariable.php",
 		data: "name="+$name,
 		type: "POST",
 		success:function(data){
-			that.num = data;
+			num = data;
 		}
 
 	});
-	return that.num;
+	return num;
 }
+*/
 
 function setPrice(name,price){
 	var id = "prod_"+name.trim();
-	var amount = getSessVariable(id);
+	//var amount = getSessVariable(id);
+	jQuery.ajax({
+		url: "./getSessVariable.php",
+		data: "name="+id,
+		type: "POST",
+		success:function(data){
+			console.log(data);
+			var id = "price_"+name.trim();
+			document.getElementById(id).innerHTML = price * data;
+		}
 
-		console.log(amount);
-	var id = "price_"+name.trim();
-	document.getElementById(id).innerHTML = price * amount ;
+	});
+
 }

@@ -69,8 +69,8 @@ class products {
                   </div>-->
                   <div>
                   
-                  <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btn btn-success" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
-                  <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="–" class="btn btn-danger" onClick = "cartAction('remove',' <?php echo $zeile->Name; ?>')" />
+                  <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btn btn-success" onclick="cartAction('add','<?php echo $zeile->Name; ?>')" />
+                  <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="–" class="btn btn-danger" onclick="cartAction('remove','<?php echo $zeile->Name; ?>')" />
 
                   <span class="pull-right">Anzahl: <span id="amount_<?php echo $zeile->Name; ?>">0</span></span>
                   </div>
