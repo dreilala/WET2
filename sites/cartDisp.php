@@ -1,12 +1,4 @@
-<?php
 
-
-$query = "SELECT $product FROM products";
-$ergebnis = $this->conn->query($query);
-
-$zeile = $ergebnis.fetch_object();
-
-?>
  <div class="container">
 
    <div class="row">
@@ -15,13 +7,13 @@ $zeile = $ergebnis.fetch_object();
 
        <div class="row">
 
-          <div class="col-sm-4 col-lg-4 col-md-4">
+          <div class="col-sm-2 col-lg-2 col-md-2">
 <?php
-              echo "<img src='images/".$zeile->pathtopicture."' alt='' onerror=\"this.src='images/default.jpg'\">"
+              echo "<img src='images/".$zeile->pathtopicture."' alt='' onerror=\"this.src='images/default.jpg'\" width='100px'>"
 ?>
           </div>
 
-              <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="col-sm-3 col-lg-3 col-md-3">
 <?php
                 echo "  <h4 class='pull-right'>$zeile->price</h4>";
 ?>
@@ -32,24 +24,21 @@ $zeile = $ergebnis.fetch_object();
 ?>
                 </h4>
               </div>
-              <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="col-sm-3 col-lg-3 col-md-3">
 
-              <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>')" />
+              <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>');setPrice('<?php echo $zeile->Name; ?>','<?php echo $zeile->price; ?>');"  />
               <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="-" class="btnAddAction cart-action" onClick = "cartAction('remove',' <?php echo $zeile->Name; ?>')" />
 
-              <div class='pull-right' id="amount_<?php echo $zeile->Name; ?>" >
-                0
+              <div class="pull-right" id="amount_<?php echo $zeile->Name; ?>" >
+                <?php echo $val; ?>
               </div>
               </div>
+              <div id="price_<?php echo $zeile->Name; ?>" class="col-sm-4 col-lg-4 col-md-4">
+                <?php echo $val*$zeile->price; ?>
+              </div>
+
           </div>
 
-
-
-
-<?php
-
-}
-?>
   </div>
 </div>
 
@@ -60,5 +49,3 @@ $zeile = $ergebnis.fetch_object();
 <?php
 echo "</div>";
 echo "</div><br>";
-
-}

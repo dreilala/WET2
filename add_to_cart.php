@@ -4,26 +4,25 @@ include_once "classes/Products.Class.php";
 include_once "classes/cart.Class.php";
 include_once "inc/dbconn.php";
 session_start();
-  if(!isset($_SESSION["cart"])){
-    $_SESSION["cart"] = new cart($dbconn);
-  }
+
 
   if($_POST["action"]=="remove"){
-
-    $_SESSION["cart"]->removeFromCart($_POST["code"]);
+    $id="prod_".$_POST["code"];
+    if(isset($_SESSION[$id])){
+      if($_SESSION[$id]>0){
+        $_SESSION[$id]=$_SESSION[$id]-1;
+      }
+    } else {
+      $_SESSION[$id] = 0;
+    }
   } else {
-
-    $_SESSION["cart"]->addToCart($_POST["code"]);
+    $id="prod_".$_POST["code"];
+    if(isset($_SESSION[$id])){
+      $_SESSION[$id]=$_SESSION[$id]+1;
+    } else {
+      $_SESSION[$id]=1;
+    }
   }
+  include("load_Cart.php");
 
-  $products = $_SESSION["cart"]->getProducts();
-  foreach($products as $prod=>$num){
-
-      $id="prod_".$prod;
-      $_SESSION[$id]=$num;
-    
-  }
-  $js_array = json_encode($products);
-  $_SESSION["cartsum"]=$products["sum"];
-  echo $js_array ;
  ?>
