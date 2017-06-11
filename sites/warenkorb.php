@@ -8,7 +8,7 @@ foreach($_SESSION as $key=>$val){
   if ($sel=="prod_"){
 
     $id = trim(substr($key,5))  ;
-    if ($id!="sum"){
+    if ($id!="sum" and $val>0){
 
       $query = "SELECT * FROM products where Name = '".$id."'";
       $ergebnis = $dbconn->query($query);
