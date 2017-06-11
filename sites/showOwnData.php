@@ -1,7 +1,7 @@
 <?php
 /*session_start();
 include "config/settings.php";*/
-include "classes/User.Class.php";
+//include "classes/User.Class.php";
 ?>
         <div class="container">
             <h1>Meine Daten</h1>

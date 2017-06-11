@@ -27,6 +27,7 @@ ob_start();
         include "classes/Products.Class.php";
         include "classes/cart.Class.php";
         include "classes/Order.Class.php";
+        include "classes/User.Class.php";
         include "inc/navigation.php";
         include "inc/settings.php";
         ?>
