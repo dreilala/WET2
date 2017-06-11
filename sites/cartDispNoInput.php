@@ -26,9 +26,7 @@
               </div>
               <div class="col-sm-3 col-lg-3 col-md-3">
 
-              <input type="button" id="add_<?php echo $zeile->Name; ?>" value="+" class="btnAddAction cart-action" onClick = "cartAction('add',' <?php echo $zeile->Name; ?>');setPrice('<?php echo $zeile->Name; ?>','<?php echo $zeile->price; ?>');"  />
-              <input type="button" id="remove_<?php echo $zeile->Name; ?>" value="-" class="btnAddAction cart-action" onClick = "cartAction('remove',' <?php echo $zeile->Name; ?>');setPrice('<?php echo $zeile->Name; ?>','<?php echo $zeile->price; ?>');" />
-
+              
               <div class="pull-right" id="amount_<?php echo $zeile->Name; ?>" >
                 <?php echo $val; ?>
               </div>

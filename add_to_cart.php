@@ -7,7 +7,7 @@ session_start();
 
 
   if($_POST["action"]=="remove"){
-    $id="prod_".$_POST["code"];
+    $id="prod_".trim($_POST["code"]);
     if(isset($_SESSION[$id])){
       if($_SESSION[$id]>0){
         $_SESSION[$id]=$_SESSION[$id]-1;
@@ -16,7 +16,7 @@ session_start();
       $_SESSION[$id] = 0;
     }
   } else {
-    $id="prod_".$_POST["code"];
+    $id="prod_".trim($_POST["code"]);
     if(isset($_SESSION[$id])){
       $_SESSION[$id]=$_SESSION[$id]+1;
     } else {

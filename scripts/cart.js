@@ -70,29 +70,25 @@ function cartRefresh() {
 }
 
 function getSessVariable($name) {
-		alert($name);
-		jQuery.ajax({
+	var num = 0;
+	var that=this;
+	jQuery.ajax({
 		url: "./getSessVariable.php",
 		data: "name="+$name,
 		type: "POST",
 		success:function(data){
-			alert(data);
-			return data;
+			that.num = data;
 		}
-});
+
+	});
+	return that.num;
 }
 
 function setPrice(name,price){
 	var id = "prod_"+name.trim();
 	var amount = getSessVariable(id);
+
+		console.log(amount);
 	var id = "price_"+name.trim();
-	alert(price + "     " + amount);
 	document.getElementById(id).innerHTML = price * amount ;
 }
-
-
-
-
-$( document ).ready(function() {
-		cartRefresh();
-});

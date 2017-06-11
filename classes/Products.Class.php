@@ -30,7 +30,7 @@ class products {
     $products = $cart->getProducts();
 
 ?>
-     <div class="container">
+     <div class="container" onload="cartRefresh();">
 
        <div class="row">
 
