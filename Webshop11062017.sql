@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Jun 2017 um 15:53
+-- Erstellungszeit: 11. Jun 2017 um 19:31
 -- Server-Version: 10.1.19-MariaDB
 -- PHP-Version: 7.0.13
 
@@ -32,6 +32,13 @@ CREATE TABLE `bestellkopf` (
   `KUND` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Daten für Tabelle `bestellkopf`
+--
+
+INSERT INTO `bestellkopf` (`RNUM`, `RDAT`, `KUND`) VALUES
+(10028, '2017-06-11 17:33:57', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +51,15 @@ CREATE TABLE `bestellung` (
   `Price` decimal(10,2) NOT NULL,
   `MENG` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `bestellung`
+--
+
+INSERT INTO `bestellung` (`RNUM`, `PROD`, `Price`, `MENG`) VALUES
+(0, '4', '4.00', 1),
+(0, 'FuÃŸball', '25.99', 2),
+(10028, 'FuÃŸball', '25.99', 3);
 
 -- --------------------------------------------------------
 
@@ -101,7 +117,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`Name`, `Description`, `pathtopicture`, `price`) VALUES
+('13', '4', '444', '4.00'),
 ('4', '4', '4.png', '4.00'),
+('FuÃŸball', 'das ist ein FuÃŸball', 'Fu_ball___Sankt_Michaelsbund-Fussball_sw.JPG', '25.99'),
 ('Kaffee', 'hierbei handelt es sich um Kaffee', 'Kaffee.png', '10.00'),
 ('WasAnderes', 'hierbei handelt es sich um was anderes', 'Other.png', '10.23');
 
@@ -195,8 +213,7 @@ ALTER TABLE `paymentinfo`
 -- Indizes für die Tabelle `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`Name`),
-  ADD UNIQUE KEY `price` (`price`);
+  ADD PRIMARY KEY (`Name`);
 
 --
 -- Indizes für die Tabelle `users`
@@ -218,7 +235,7 @@ ALTER TABLE `voucher`
 -- AUTO_INCREMENT für Tabelle `bestellkopf`
 --
 ALTER TABLE `bestellkopf`
-  MODIFY `RNUM` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10028;
+  MODIFY `RNUM` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10029;
 --
 -- AUTO_INCREMENT für Tabelle `paymentinfo`
 --
