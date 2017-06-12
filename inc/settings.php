@@ -6,7 +6,7 @@ if (!empty($_GET['page'])) {
 
     $file = "sites/" . $_GET['page'] . ".php";
     if (file_exists($file)) {
-        $adminroutes  = array("voucher", "Customerinfo", "Listproducts");
+        $adminroutes  = array("voucher", "customerinfo", "Listproducts", "AddProducts");
         if ((!isset($_SESSION["userid"]) || $_SESSION["userid"] != 1) && in_array($_GET['page'], $adminroutes)) {
             include("sites/notallowed.php");
         } else {
