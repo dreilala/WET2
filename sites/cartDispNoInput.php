@@ -27,7 +27,7 @@
               <div class="col-sm-3 col-lg-3 col-md-3">
 
               
-              <div class="pull-right" id="amount_<?php echo $zeile->Name; ?>" >
+              <div class="pull-right" id="ordered_<?php echo $zeile->Name; ?>" >
                 <?php echo $val; ?>
               </div>
               </div>
